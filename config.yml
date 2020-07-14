@@ -1,0 +1,16 @@
+title: Angular Zero - Hero
+description: Essential Angular Course For Beginneres
+template:
+  repo: angular-zero-hero-template
+  name: angular-zero-hero
+before:
+  - type: createIssue
+    title: Welcome!
+    body: new-issue.md
+steps:
+  - title: First step
+    description: The first step in your course
+    event: issues.assigned
+    link: '{{ repoUrl }}'
+    actions:
+      - type: closeIssue
