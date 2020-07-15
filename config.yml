@@ -13,4 +13,14 @@ steps:
     event: issues.assigned
     link: '{{ repoUrl }}'
     actions:
-      - type: closeIssue
+      - type: gate
+        #Only respond to specififc issue
+        left : '%payload.issue.title%'
+        operator : ===
+        right : Welcome!
+        else  : 
+        - type : respond
+          with : wrong-issue.md
+
+      - type : respond 
+        with : you-closed.md
